@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions In JavaaScript</title>
+</head>
+<body>
+    <h1>Exercises About Functions In JavaScript</h1>
+    <!-- EXERCISE 1 — STUDENT MARKS COUNTER 
+Create a webpage with:
+A heading showing marks (start with 50).
+A button "Add Bonus Marks".
+A button "Deduct Marks". -->
+
+<h1 id="marks">50</h1>
+<button id="add">Add Bonus Marks</button>
+<button id="deduct">Deduct Marks</button>
+
+ <!-- ===================================================================================== -->
+
+<!-- EXERCISE 2 — AGE COUNTER 
+Create a webpage with:
+A heading showing age (start with 18).
+A button "Birthday".
+A button "Go Back One Year".
+ -->
+
+ <h1 id="age">18</h1>
+<button id="birthday">Birthday </button>
+<button id="back">Go Back One Year </button>
+
+<!-- ============================================================================= -->
+
+
+<!-- EXERCISE 3
+ LIGHT BULB STATUS 
+Create a webpage with:
+A heading showing "Bulb is OFF".
+A button "Turn ON".
+A button "Turn OFF". -->
+
+<h1 id="status">Bulb is OFF</h1>
+
+<button id="onBtn">Turn ON 💡</button>
+<button id="offBtn">Turn OFF 📴</button>
+
+<!-- ================================================================================ -->
+
+</body>
+
+<script>
+    // ExerciseNO#1
+// Requirements:
+// When "Add Bonus Marks" is clicked, increase marks by 5.
+// When "Deduct Marks" is clicked, decrease marks by 5.
+// Create separate functions for both buttons.
+// Use querySelector() to select elements.
+// Use addEventListener() to attach events.
+
+let marksH1 = document.querySelector("#marks")
+let addBtn = document.querySelector("#add")
+let deductBtn = document.querySelector("#deduct")
+
+let marks = Number(marksH1.innerHTML)
+
+// function to increase marks
+let addMarks = () => {
+    marks += 5
+    marksH1.innerHTML = marks
+}
+
+// function to decrease marks
+let deductMarks = () => {
+    marks -= 5
+    marksH1.innerHTML = marks
+}
+
+// events
+addBtn.addEventListener("click", addMarks)
+deductBtn.addEventListener("click", deductMarks)
+
+// ====================================================================================================
+
+
+// EXERCISENO#2
+// Requirements:
+// Clicking "Birthday" should increase age by 1.
+// Clicking "Go Back One Year" should decrease age by 1.
+// Create incrementAge() and decrementAge() functions.
+// Update the heading using innerHTML.
+// Use addEventListener() for both buttons.
+
+let ageH1 = document.querySelector("#age")
+let birthdayBtn = document.querySelector("#birthday")
+let backBtn = document.querySelector("#back")
+
+// initial age
+let age = Number(ageH1.innerHTML)
+
+// function: increase age
+let incrementAge = () => {
+    age += 1
+    ageH1.innerHTML = age
+}
+
+// function: decrease age
+let decrementAge = () => {
+    age -= 1
+    ageH1.innerHTML = age
+}
+
+// events
+birthdayBtn.addEventListener("click", incrementAge)
+backBtn.addEventListener("click", decrementAge)
+
+// ==================================================================================================================
+
+
+
+// Requirements:
+// When "Turn ON" is clicked, change the heading text to "Bulb is ON".
+// When "Turn OFF" is clicked, change the heading text to "Bulb is OFF".
+// Create separate functions:
+// turnOn()
+// turnOff()
+// Use querySelector() to select the heading.
+// Use addEventListener() to connect the buttons.
+
+let statusH1 = document.querySelector("#status")
+let onBtn = document.querySelector("#onBtn")
+let offBtn = document.querySelector("#offBtn")
+
+// function: turn ON
+let turnOn = () => {
+    statusH1.innerHTML = "Bulb is ON 💡 "
+}
+
+// function: turn OFF
+let turnOff = () => {
+    statusH1.innerHTML = "Bulb is OFF 📴"
+}
+
+// events
+onBtn.addEventListener("click", turnOn)
+offBtn.addEventListener("click", turnOff)
+
+// ===================================================================================
+
+
+</script>
+
+</html>
